@@ -47,13 +47,6 @@
 				."/>
 		</exec>
 	</target>
-    <target name="clean" description="Vide les répertoires d'artefacts">
-
-	
-	</target>
-
-    <target name="qa" description="Lance les outils d'analyse">
-
-    </target>
+  
 
 </project>
