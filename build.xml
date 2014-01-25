@@ -47,15 +47,15 @@
 				."/>
 		</exec>
 	</target>
-  <!-- Lint the PHP files in app dir. Linting the whole framework library takes forever -->
- <target name="lint" description="Perform syntax check of sourcecode files">
-  <apply executable="php" failonerror="true">
+  
+ <target name="lint" >
+  <exec executable="php" failonerror="true">
    <arg value="-l" />  
    	<fileset dir="${basedir}">
     	<include name="**/*.php" />
     <modified />
    </fileset>
-  </apply>
+  </exec>
  </target>
 
 </project>
