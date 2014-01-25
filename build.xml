@@ -4,7 +4,7 @@
 
     <target name="build"
         description="Tâche principale d'intégration continue"
-        depends="init,phpcs,phpmd,pdepend,test"
+        depends="init,phpcs,phpmd,pdepend,test,lint"
     />
     <target name="init" >
 		<mkdir dir="${output}"/>
@@ -47,6 +47,15 @@
 				."/>
 		</exec>
 	</target>
-  
+  <!-- Lint the PHP files in app dir. Linting the whole framework library takes forever -->
+ <target name="lint" description="Perform syntax check of sourcecode files">
+  <apply executable="php" failonerror="true">
+   <arg value="-l" />  
+   	<fileset dir="${basedir}">
+    	<include name="**/*.php" />
+    <modified />
+   </fileset>
+  </apply>
+ </target>
 
 </project>
