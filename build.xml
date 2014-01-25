@@ -53,8 +53,7 @@
    <arg value="-l" />  
    	<fileset dir="${basedir}">
     	<include name="**/*.php" />
-    <modified />
-   </fileset>
+    
   </exec>
  </target>
 
